@@ -59,7 +59,7 @@ export const Home: React.FC = () => {
           <div className="flex flex-col items-center justify-center p-8 bg-[#F6F2E9] rounded-3xl border border-[#E8E4D8] shrink-0">
             <img src="/logo.svg" alt="Maktabah Emblem" className="w-44 h-44 object-contain" />
             <span className="font-arabic text-xl font-bold mt-4 text-[#0C3934]">مكتبة الإمام الألباني</span>
-            <span className="text-xs text-[#C59E42] mt-1 font-semibold tracking-wider uppercase">BothLife Centre & Library</span>
+            <span className="text-xs text-[#C59E42] mt-1 font-semibold tracking-wider uppercase">by BothLife Centre & Library</span>
           </div>
         </div>
       </section>

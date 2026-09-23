@@ -46,7 +46,7 @@ export const Navbar: React.FC = () => {
                 {settings.store_name}
               </span>
               <span className="text-[11px] text-[#C59E42] font-semibold tracking-wider uppercase">
-                BothLife Centre & Library
+                by BothLife Centre & Library
               </span>
             </div>
           </Link>

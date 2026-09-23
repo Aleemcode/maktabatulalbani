@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
               <img src="/logo.svg" alt="Maktabah Logo" className="w-10 h-10 object-contain filter invert" />
               <div>
                 <span className="text-white font-bold text-base block leading-tight">{settings.store_name}</span>
-                <span className="text-[#C59E42] text-[11px] font-semibold tracking-wider uppercase block">BothLife Centre & Library</span>
+                <span className="text-[#C59E42] text-[11px] font-semibold tracking-wider uppercase block">by BothLife Centre & Library</span>
               </div>
             </div>
             <p className="text-xs leading-relaxed text-zinc-400">
