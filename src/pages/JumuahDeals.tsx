@@ -34,7 +34,7 @@ export const JumuahDeals: React.FC = () => {
   const handleGeneralDealWhatsApp = () => {
     const phone = sanitizeWhatsAppNumber(settings.whatsapp_number);
     const text = encodeURIComponent(
-      `*Assalamu Alaykum Abu Abdillah Al-Badr,*\n\nI am contacting you regarding the *Jumu'ah Deals* from Maktabah Imam Albani / BothLife Centre.\n\nPlease share the available titles and bundle offers for this week's Jumu'ah special.`
+      `Assalamu ‘Alaikum wa Rahmatullāh, Abā Abdillah Al-Badr @ Maktabah Imam Al-Albani,\n\nI am contacting you regarding the *Jumu'ah Deals* from Maktabah Imam Albani / BothLife Centre.\n\nPlease share the available titles and bundle offers for this week's Jumu'ah special.`
     );
     window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
   };
@@ -300,7 +300,7 @@ export const JumuahDeals: React.FC = () => {
           </div>
 
           <a
-            href="https://wa.me/2349124161597?text=Assalamu%20Alaykum%20Abu%20Abdillah%20Al-Badr%2C%20I%20am%20inquiring%20about%20the%20Jumu%27ah%20Deals."
+            href={`https://wa.me/${sanitizeWhatsAppNumber(settings.whatsapp_number)}?text=${encodeURIComponent("Assalamu ‘Alaikum wa Rahmatullāh, Abā Abdillah Al-Badr @ Maktabah Imam Al-Albani,\n\nI am inquiring about the Jumu'ah Deals.")}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#25D366] hover:bg-[#22c55e] text-white text-xs font-bold transition-all shrink-0 whitespace-nowrap"

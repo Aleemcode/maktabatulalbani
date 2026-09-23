@@ -26,21 +26,33 @@ export const createBookWhatsAppUrl = (
     settings.currency_symbol
   );
 
+  const baseUrl = typeof window !== 'undefined' && window.location.origin
+    ? window.location.origin
+    : 'https://maktabatulalbani.vercel.app';
+  const bookUrl = `${baseUrl}/book/${book.slug}`;
+
+  const details: string[] = [
+    `*Title:* ${book.title}`
+  ];
+
+  if (book.arabic_title && book.arabic_title.trim()) {
+    details.push(`*Arabic Title:* ${book.arabic_title.trim()}`);
+  }
+
+  details.push(`*Author:* ${book.author}`);
+  details.push(`*Price:* ${priceFormatted}`);
+
   const message = [
-    `*Assalamu Alaykum Abu Abdillah Albadr (Maktabah Imam Albani),*`,
+    `Assalamu ‘Alaikum wa Rahmatullāh, Abā Abdillah Al-Badr @ Maktabah Imam Al-Albani,`,
     ``,
-    `I would like to inquire about / purchase the following book from your catalogue:`,
-    `*Title:* ${book.title}`,
-    book.arabic_title ? `*Arabic Title:* ${book.arabic_title}` : '',
-    `*Author:* ${book.author}`,
-    `*Price:* ${priceFormatted}`,
-    book.isbn ? `*ISBN:* ${book.isbn}` : '',
+    `I would like to inquire about/purchase the following book from your catalogue:`,
     ``,
-    `Is this copy currently available for delivery or pickup?`,
-    `Ref: ${typeof window !== 'undefined' ? window.location.origin : ''}/book/${book.slug}`
-  ]
-    .filter(Boolean)
-    .join('\n');
+    details.join('\n\n'),
+    ``,
+    `Please confirm if this copy is currently available for delivery or pickup.`,
+    ``,
+    `*Book Link:* ${bookUrl}`
+  ].join('\n');
 
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 };
@@ -58,26 +70,32 @@ export const createCartWhatsAppUrl = (
     0
   );
 
+  const baseUrl = typeof window !== 'undefined' && window.location.origin
+    ? window.location.origin
+    : 'https://maktabatulalbani.vercel.app';
+
   const booksList = items
     .map(
       (item, idx) =>
-        `${idx + 1}. *${item.book.title}* (Qty: ${item.quantity}) - ${formatCurrency(
-          (item.book.discount_price || item.book.price) * item.quantity,
+        `${idx + 1}. *${item.book.title}*\n   Author: ${item.book.author}\n   Qty: ${item.quantity} × ${formatCurrency(
+          item.book.discount_price || item.book.price,
           settings.currency_symbol
-        )}`
+        )}\n   Link: ${baseUrl}/book/${item.book.slug}`
     )
-    .join('\n');
+    .join('\n\n');
 
   const message = [
-    `*Assalamu Alaykum Abu Abdillah Albadr (Maktabah Imam Albani),*`,
+    `Assalamu ‘Alaikum wa Rahmatullāh, Abā Abdillah Al-Badr @ Maktabah Imam Al-Albani,`,
     ``,
-    `I would like to order the following book(s) from your catalogue:`,
+    `I would like to order/inquire about the following book(s) from your catalogue:`,
+    ``,
     booksList,
     ``,
     `*Total Estimated Value:* ${formatCurrency(totalAmount, settings.currency_symbol)}`,
     ``,
     `Please confirm stock availability and payment/delivery details.`,
-    `Jazakumullahu Khayran.`
+    ``,
+    `Jazākumullāhu Khayran.`
   ].join('\n');
 
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
@@ -94,7 +112,7 @@ export const createGeneralWhatsAppUrl = (
   const message =
     customInquiry ||
     settings.whatsapp_default_message ||
-    'Assalamu Alaykum Abu Abdillah Albadr, I would like to make an inquiry regarding your book collection at Maktabah Imam Albani.';
+    'Assalamu ‘Alaikum wa Rahmatullāh, Abā Abdillah Al-Badr @ Maktabah Imam Al-Albani,\n\nI would like to make an inquiry regarding your book collection and services.';
 
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 };
