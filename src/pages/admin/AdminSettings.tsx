@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Save, RefreshCw, CheckCircle2, MessageCircle } from 'lucide-react';
+import { FloppyDisk, ArrowsClockwise, CheckCircle, WhatsappLogo } from '@phosphor-icons/react';
 import { useCatalogue } from '../../context/CatalogueContext';
 import { StoreSettings } from '../../types';
 
@@ -36,7 +36,7 @@ export const AdminSettings: React.FC = () => {
 
       {savedSuccess && (
         <div className="flex items-center gap-2 p-3.5 rounded-xl bg-emerald-50 text-emerald-800 text-xs border border-emerald-200">
-          <CheckCircle2 className="w-4 h-4 text-[#0C5149]" />
+          <CheckCircle className="w-4 h-4 text-[#0C5149]" />
           <span>Settings successfully updated and saved to cloud database!</span>
         </div>
       )}
@@ -45,7 +45,7 @@ export const AdminSettings: React.FC = () => {
         {/* WhatsApp Conversion Section */}
         <div className="p-5 rounded-2xl bg-[#F6F2E9] border border-[#E8E4D8] space-y-4">
           <div className="flex items-center gap-2">
-            <MessageCircle className="w-5 h-5 text-[#25D366]" />
+            <WhatsappLogo size={20} weight="fill" className="text-[#25D366]" />
             <h2 className="text-sm font-bold text-[#0C3934]">WhatsApp Conversion Channel</h2>
           </div>
 
@@ -157,7 +157,7 @@ export const AdminSettings: React.FC = () => {
             onClick={handleReset}
             className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs text-red-500 hover:bg-red-50 transition-colors"
           >
-            <RefreshCw className="w-3.5 h-3.5" />
+            <ArrowsClockwise className="w-3.5 h-3.5" />
             <span>Reset Demo to Defaults</span>
           </button>
 
@@ -165,7 +165,7 @@ export const AdminSettings: React.FC = () => {
             type="submit"
             className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#0C3934] hover:bg-[#0C5149] text-white text-xs font-semibold transition-colors shadow-xs"
           >
-            <Save className="w-4 h-4 text-[#C59E42]" />
+            <FloppyDisk className="w-4 h-4 text-[#C59E42]" />
             <span>Save Settings</span>
           </button>
         </div>

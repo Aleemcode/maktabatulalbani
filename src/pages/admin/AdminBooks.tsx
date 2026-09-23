@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Plus, Search, Edit2, Trash2, CheckCircle2, XCircle, Star } from 'lucide-react';
+import { Plus, MagnifyingGlass, PencilSimple, Trash, CheckCircle, XCircle, Star } from '@phosphor-icons/react';
 import { useCatalogue } from '../../context/CatalogueContext';
 import { formatCurrency } from '../../lib/whatsapp';
 
@@ -52,7 +52,7 @@ export const AdminBooks: React.FC = () => {
       {/* Search & Filter Bar */}
       <div className="bg-white p-4 rounded-2xl border border-[#E8E4D8] flex flex-col sm:flex-row gap-3 shadow-xs">
         <div className="relative flex-1">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#A9B8B5]" />
+          <MagnifyingGlass className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#A9B8B5]" />
           <input
             type="text"
             value={search}
@@ -141,7 +141,7 @@ export const AdminBooks: React.FC = () => {
                         >
                           {book.in_stock ? (
                             <>
-                              <CheckCircle2 className="w-3 h-3 text-[#0C5149]" />
+                              <CheckCircle className="w-3 h-3 text-[#0C5149]" />
                               <span>In Stock</span>
                             </>
                           ) : (
@@ -171,14 +171,14 @@ export const AdminBooks: React.FC = () => {
                           className="inline-flex items-center p-1.5 rounded-lg hover:bg-[#F6F2E9] text-[#0C5149] hover:text-[#0C3934] transition-colors"
                           title="Edit book"
                         >
-                          <Edit2 className="w-3.5 h-3.5" />
+                          <PencilSimple className="w-3.5 h-3.5" />
                         </Link>
                         <button
                           onClick={() => handleDelete(book.id, book.title)}
                           className="inline-flex items-center p-1.5 rounded-lg hover:bg-red-50 text-red-400 hover:text-red-600 transition-colors"
                           title="Delete book"
                         >
-                          <Trash2 className="w-3.5 h-3.5" />
+                          <Trash className="w-3.5 h-3.5" />
                         </button>
                       </td>
                     </tr>

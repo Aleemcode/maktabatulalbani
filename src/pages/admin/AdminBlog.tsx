@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Plus, Edit2, Trash2 } from 'lucide-react';
+import { Plus, PencilSimple, Trash } from '@phosphor-icons/react';
 import { useCatalogue } from '../../context/CatalogueContext';
 
 export const AdminBlog: React.FC = () => {
@@ -87,14 +87,14 @@ export const AdminBlog: React.FC = () => {
                       className="inline-flex items-center p-1.5 rounded-lg hover:bg-[#F6F2E9] text-[#0C5149] hover:text-[#0C3934] transition-colors"
                       title="Edit article"
                     >
-                      <Edit2 className="w-3.5 h-3.5" />
+                      <PencilSimple className="w-3.5 h-3.5" />
                     </Link>
                     <button
                       onClick={() => handleDelete(post.id, post.title)}
                       className="inline-flex items-center p-1.5 rounded-lg hover:bg-red-50 text-red-400 hover:text-red-600 transition-colors"
                       title="Delete article"
                     >
-                      <Trash2 className="w-3.5 h-3.5" />
+                      <Trash className="w-3.5 h-3.5" />
                     </button>
                   </td>
                 </tr>

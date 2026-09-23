@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ShoppingBag, MessageCircle, Menu, X } from 'lucide-react';
+import { ShoppingBag, List, X, WhatsappLogo } from '@phosphor-icons/react';
 import { useCatalogue } from '../../context/CatalogueContext';
 import { useCart } from '../../context/CartContext';
 import { createGeneralWhatsAppUrl } from '../../lib/whatsapp';
@@ -99,7 +99,7 @@ export const Navbar: React.FC = () => {
               rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0C3934] text-[#F7EEDB] text-xs font-semibold hover:bg-[#0C5149] transition-all shadow-xs border border-[#0C5149]"
             >
-              <MessageCircle className="w-4 h-4 text-[#25D366]" />
+              <WhatsappLogo size={18} weight="fill" className="text-[#25D366]" />
               <span>Ask on WhatsApp</span>
             </a>
 
@@ -108,7 +108,7 @@ export const Navbar: React.FC = () => {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden p-2 rounded-lg text-[#0C3934] hover:bg-[#F6F2E9]"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X size={24} /> : <List size={24} />}
             </button>
           </div>
         </div>
@@ -142,7 +142,7 @@ export const Navbar: React.FC = () => {
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full mt-4 py-3 rounded-xl bg-[#25D366] text-white font-semibold text-sm shadow-sm whitespace-nowrap"
           >
-            <MessageCircle className="w-5 h-5 fill-white shrink-0" />
+            <WhatsappLogo size={20} weight="fill" className="text-white shrink-0" />
             <span>Chat on WhatsApp</span>
           </a>
         </div>

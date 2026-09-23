@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Save } from 'lucide-react';
+import { ArrowLeft, FloppyDisk } from '@phosphor-icons/react';
 import { useCatalogue } from '../../context/CatalogueContext';
 import { Book } from '../../types';
 
@@ -351,7 +351,7 @@ export const BookEditor: React.FC = () => {
             type="submit"
             className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#0C3934] hover:bg-[#0C5149] text-white text-xs font-semibold shadow-xs transition-colors"
           >
-            <Save className="w-4 h-4 text-[#C59E42]" />
+            <FloppyDisk className="w-4 h-4 text-[#C59E42]" />
             <span>{isEditing ? 'Save Changes' : 'Publish Book Listing'}</span>
           </button>
         </div>

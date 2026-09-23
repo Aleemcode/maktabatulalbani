@@ -1,5 +1,4 @@
-import React from 'react';
-import { X, Trash2, Plus, Minus, MessageCircle, ShoppingBag } from 'lucide-react';
+import { X, Trash, Plus, Minus, WhatsappLogo, ShoppingBag } from '@phosphor-icons/react';
 import { useCart } from '../../context/CartContext';
 import { useCatalogue } from '../../context/CatalogueContext';
 import { formatCurrency, createCartWhatsAppUrl } from '../../lib/whatsapp';
@@ -97,7 +96,7 @@ export const CartDrawer: React.FC = () => {
                         className="text-[#A1A1AA] hover:text-red-500 p-1"
                         aria-label="Remove book from inquiry"
                       >
-                        <Trash2 className="w-4 h-4" />
+                        <Trash className="w-4 h-4" />
                       </button>
                     </div>
                   </div>
@@ -120,7 +119,7 @@ export const CartDrawer: React.FC = () => {
                 onClick={handleWhatsAppCheckout}
                 className="w-full py-3.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#22c55e] text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-sm transition-all"
               >
-                <MessageCircle className="w-5 h-5 fill-white" />
+                <WhatsappLogo size={22} weight="fill" className="text-white" />
                 <span>Send Order Inquiry on WhatsApp</span>
               </button>
 

@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  CheckCircle2,
+  CheckCircle,
   Percent,
   Truck,
   CreditCard,
-  MessageCircle,
-  HelpCircle,
+  WhatsappLogo,
+  Question,
   ShieldCheck,
   Plus,
   Check,
   ArrowRight
-} from 'lucide-react';
+} from '@phosphor-icons/react';
 import { useCatalogue } from '../context/CatalogueContext';
 import { useCart } from '../context/CartContext';
 import { formatCurrency, createBookWhatsAppUrl, sanitizeWhatsAppNumber } from '../lib/whatsapp';
@@ -24,11 +24,11 @@ export const JumuahDeals: React.FC = () => {
 
   const perks = [
     { title: 'Quality Books', desc: 'Authentic publications from trusted Islamic publishing houses', icon: ShieldCheck },
-    { title: 'Reliable Authors', desc: 'Verified scholarship upon the Quran and authentic Sunnah', icon: CheckCircle2 },
+    { title: 'Reliable Authors', desc: 'Verified scholarship upon the Quran and authentic Sunnah', icon: CheckCircle },
     { title: 'Pocket-Friendly Prices', desc: 'Special reduced prices negotiated for students of knowledge', icon: Percent },
     { title: 'Instalment Payment', desc: 'Flexible payment arrangements available for bulk student purchases', icon: CreditCard },
     { title: 'Discounted Delivery', desc: 'Reduced delivery rates to your doorstep across Nigeria', icon: Truck },
-    { title: 'Customer Guide & Support', desc: 'Consultative guidance to help build your personal study curriculum', icon: HelpCircle },
+    { title: 'Customer Guide & Support', desc: 'Consultative guidance to help build your personal study curriculum', icon: Question },
   ];
 
   const handleGeneralDealWhatsApp = () => {
@@ -92,7 +92,7 @@ export const JumuahDeals: React.FC = () => {
                   onClick={handleGeneralDealWhatsApp}
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#22c55e] text-white text-xs sm:text-sm font-bold shadow-md transition-all active:scale-98 whitespace-nowrap"
                 >
-                  <MessageCircle className="w-4 h-4 fill-white shrink-0" />
+                  <WhatsappLogo size={18} weight="fill" className="text-white shrink-0" />
                   <span>Chat with Abu Abdillah</span>
                 </button>
 
@@ -268,7 +268,7 @@ export const JumuahDeals: React.FC = () => {
                           : 'border-[#E8E4D8] hover:border-[#0C3934] text-[#0C3934]'
                       }`}
                     >
-                      {inCart ? <Check className="w-3.5 h-3.5 text-[#0C5149]" /> : <Plus className="w-3.5 h-3.5" />}
+                      {inCart ? <Check size={14} weight="bold" className="text-[#0C5149]" /> : <Plus size={14} weight="bold" />}
                       <span>{inCart ? 'Selected' : 'Select'}</span>
                     </button>
 
@@ -278,7 +278,7 @@ export const JumuahDeals: React.FC = () => {
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg bg-[#25D366] hover:bg-[#22c55e] text-white text-xs font-semibold transition-colors"
                     >
-                      <MessageCircle className="w-3.5 h-3.5 fill-white" />
+                      <WhatsappLogo size={16} weight="fill" className="text-white" />
                       <span>Order</span>
                     </a>
                   </div>
@@ -305,7 +305,7 @@ export const JumuahDeals: React.FC = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#25D366] hover:bg-[#22c55e] text-white text-xs font-bold transition-all shrink-0 whitespace-nowrap"
           >
-            <MessageCircle className="w-4 h-4 fill-white shrink-0" />
+            <WhatsappLogo size={18} weight="fill" className="text-white shrink-0" />
             <span>Chat on WhatsApp</span>
           </a>
         </div>

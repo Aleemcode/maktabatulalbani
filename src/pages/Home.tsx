@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Search, ArrowRight, MessageCircle, Sparkles, Plus, Check, Percent } from 'lucide-react';
+import { MagnifyingGlass, ArrowRight, WhatsappLogo, Sparkle, Plus, Check, Percent } from '@phosphor-icons/react';
 import { useCatalogue } from '../context/CatalogueContext';
 import { useCart } from '../context/CartContext';
 import { formatCurrency, createBookWhatsAppUrl, createGeneralWhatsAppUrl } from '../lib/whatsapp';
@@ -21,7 +21,7 @@ export const Home: React.FC = () => {
         <div className="rounded-3xl border border-[#E8E4D8] bg-white p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 shadow-xs">
           <div className="space-y-6 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F6F2E9] border border-[#E8E4D8] text-xs font-semibold text-[#0C3934]">
-              <Sparkles className="w-3.5 h-3.5 text-[#C59E42]" />
+              <Sparkle size={15} weight="fill" className="text-[#C59E42]" />
               <span>BothLife Centre & Library • Official Catalogue</span>
             </div>
 
@@ -36,7 +36,7 @@ export const Home: React.FC = () => {
             {/* Search Box */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
               <div className="relative flex-1">
-                <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#A1A1AA]" />
+                <MagnifyingGlass size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#A1A1AA]" />
                 <input
                   type="text"
                   value={searchQuery}
@@ -233,7 +233,7 @@ export const Home: React.FC = () => {
                           : 'border-[#E8E4D8] hover:border-[#0C3934] text-[#0C3934]'
                       }`}
                     >
-                      {inCart ? <Check className="w-3.5 h-3.5 text-[#0C5149]" /> : <Plus className="w-3.5 h-3.5" />}
+                      {inCart ? <Check size={14} weight="bold" className="text-[#0C5149]" /> : <Plus size={14} weight="bold" />}
                       <span>{inCart ? 'Selected' : 'Select'}</span>
                     </button>
 
@@ -243,7 +243,7 @@ export const Home: React.FC = () => {
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg bg-[#25D366] hover:bg-[#22c55e] text-white text-xs font-semibold transition-colors"
                     >
-                      <MessageCircle className="w-3.5 h-3.5 fill-white" />
+                      <WhatsappLogo size={16} weight="fill" className="text-white" />
                       <span>Order</span>
                     </a>
                   </div>
@@ -310,7 +310,7 @@ export const Home: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#0C3934] text-white rounded-3xl p-8 sm:p-12 text-center flex flex-col items-center space-y-4 border border-[#0C5149] shadow-md">
           <div className="w-12 h-12 rounded-full bg-[#25D366]/20 flex items-center justify-center text-[#25D366]">
-            <MessageCircle className="w-6 h-6 fill-[#25D366]" />
+            <WhatsappLogo size={28} weight="fill" className="text-[#25D366]" />
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold font-serif-display max-w-xl">
             Looking for a specific title or need student recommendations?
@@ -324,7 +324,7 @@ export const Home: React.FC = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#22c55e] text-white font-bold text-xs sm:text-sm transition-all shadow-md mt-2 whitespace-nowrap"
           >
-            <MessageCircle className="w-4 h-4 fill-white shrink-0" />
+            <WhatsappLogo size={18} weight="fill" className="text-white shrink-0" />
             <span>Chat on WhatsApp</span>
           </a>
           <p className="text-[11px] text-[#C59E42] font-semibold">

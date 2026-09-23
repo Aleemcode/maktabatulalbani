@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Lock, KeyRound, AlertCircle, ArrowLeft } from 'lucide-react';
+import { Lock, Key, WarningCircle, ArrowLeft } from '@phosphor-icons/react';
 
 export const AdminLogin: React.FC = () => {
   const [passcode, setPasscode] = useState('');
@@ -45,7 +45,7 @@ export const AdminLogin: React.FC = () => {
 
         {error && (
           <div className="flex items-center gap-2 p-3 rounded-xl bg-red-50 text-red-700 text-xs border border-red-200">
-            <AlertCircle className="w-4 h-4 shrink-0" />
+            <WarningCircle className="w-4 h-4 shrink-0" />
             <span>{error}</span>
           </div>
         )}
@@ -56,7 +56,7 @@ export const AdminLogin: React.FC = () => {
               Admin Passkey
             </label>
             <div className="relative">
-              <KeyRound className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#A9B8B5]" />
+              <Key className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#A9B8B5]" />
               <input
                 type="password"
                 value={passcode}

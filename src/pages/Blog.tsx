@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Clock, Tag } from 'lucide-react';
+import { ArrowRight, Clock, Tag } from '@phosphor-icons/react';
 import { useCatalogue } from '../context/CatalogueContext';
 
 export const Blog: React.FC = () => {

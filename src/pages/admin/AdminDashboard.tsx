@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, FileText, MessageCircle, AlertTriangle, Plus, ExternalLink } from 'lucide-react';
+import { BookOpen, FileText, WhatsappLogo, Warning, Plus, ArrowSquareOut } from '@phosphor-icons/react';
 import { useCatalogue } from '../../context/CatalogueContext';
 import { formatCurrency, createGeneralWhatsAppUrl } from '../../lib/whatsapp';
 
@@ -56,7 +56,7 @@ export const AdminDashboard: React.FC = () => {
           <div className="flex items-center justify-between text-[#5C6969]">
             <span className="text-xs font-medium">Pre-order / Special Request</span>
             <div className="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center text-amber-700">
-              <AlertTriangle className="w-4 h-4 text-amber-600" />
+              <Warning size={18} weight="fill" className="text-amber-600" />
             </div>
           </div>
           <p className="text-2xl font-bold text-[#0C3934]">{outOfStockCount}</p>
@@ -80,7 +80,7 @@ export const AdminDashboard: React.FC = () => {
           <div className="flex items-center justify-between text-[#5C6969]">
             <span className="text-xs font-medium">WhatsApp Destination</span>
             <div className="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-700">
-              <MessageCircle className="w-4 h-4 text-[#25D366]" />
+              <WhatsappLogo size={20} weight="fill" className="text-[#25D366]" />
             </div>
           </div>
           <p className="text-sm font-bold text-[#0C3934] truncate">+{settings.whatsapp_number}</p>
@@ -91,7 +91,7 @@ export const AdminDashboard: React.FC = () => {
             className="text-[11px] text-[#0C5149] font-semibold hover:underline inline-flex items-center gap-1"
           >
             <span>Test Chat Trigger</span>
-            <ExternalLink className="w-3 h-3 text-[#C59E42]" />
+            <ArrowSquareOut className="w-3 h-3 text-[#C59E42]" />
           </a>
         </div>
       </div>

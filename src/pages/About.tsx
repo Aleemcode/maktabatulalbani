@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, BookOpen, MessageCircle } from 'lucide-react';
+import { ShieldCheck, BookOpen, WhatsappLogo } from '@phosphor-icons/react';
 import { useCatalogue } from '../context/CatalogueContext';
 import { createGeneralWhatsAppUrl } from '../lib/whatsapp';
 
@@ -46,7 +46,7 @@ export const About: React.FC = () => {
 
         <div className="p-6 rounded-2xl bg-white border border-[#EFECE6] space-y-2">
           <div className="w-10 h-10 rounded-xl bg-[#FAF9F6] border border-[#EFECE6] flex items-center justify-center text-[#18181B]">
-            <MessageCircle className="w-5 h-5 text-[#25D366]" />
+            <WhatsappLogo size={22} weight="fill" className="text-[#25D366]" />
           </div>
           <h3 className="text-sm font-bold text-[#18181B]">Personalized Service</h3>
           <p className="text-xs text-[#71717A] leading-relaxed">
@@ -67,7 +67,7 @@ export const About: React.FC = () => {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#25D366] text-white text-xs font-semibold hover:bg-[#22c55e] transition-colors shrink-0 shadow-sm"
         >
-          <MessageCircle className="w-4 h-4 fill-white" />
+          <WhatsappLogo size={18} weight="fill" className="text-white" />
           <span>Message on WhatsApp</span>
         </a>
       </div>

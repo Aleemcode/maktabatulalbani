@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, BookOpen, FileText, Settings, ExternalLink, LogOut } from 'lucide-react';
+import { SquaresFour, BookOpen, FileText, Gear, ArrowSquareOut, SignOut } from '@phosphor-icons/react';
 import { useCatalogue } from '../../context/CatalogueContext';
 
 export const AdminLayout: React.FC = () => {
@@ -14,10 +14,10 @@ export const AdminLayout: React.FC = () => {
   };
 
   const navItems = [
-    { name: 'Dashboard', path: '/admin', icon: LayoutDashboard },
+    { name: 'Dashboard', path: '/admin', icon: SquaresFour },
     { name: 'Catalogue & Books', path: '/admin/books', icon: BookOpen },
     { name: 'Reader Blog', path: '/admin/blog', icon: FileText },
-    { name: 'Store Settings', path: '/admin/settings', icon: Settings },
+    { name: 'Store Settings', path: '/admin/settings', icon: Gear },
   ];
 
   const isActive = (path: string) => {
@@ -100,13 +100,13 @@ export const AdminLayout: React.FC = () => {
             className="flex items-center justify-between px-3 py-2 rounded-xl text-xs text-emerald-200/80 hover:text-white hover:bg-[#0C5149]/60 transition-colors"
           >
             <span>View Public Store</span>
-            <ExternalLink className="w-3.5 h-3.5 text-[#C59E42]" />
+            <ArrowSquareOut className="w-3.5 h-3.5 text-[#C59E42]" />
           </Link>
           <button
             onClick={handleLogout}
-            className="w-full flex items-center gap-2 px-3 py-2 rounded-xl text-xs text-red-300 hover:text-red-200 hover:bg-red-900/30 transition-colors"
+            className="w-full flex items-center gap-2 px-3 py-2 rounded-xl text-xs text-red-300 hover:text-red-200 hover:bg-red-900/30 transition-colors cursor-pointer"
           >
-            <LogOut className="w-3.5 h-3.5" />
+            <SignOut className="w-3.5 h-3.5" />
             <span>Sign Out</span>
           </button>
         </div>

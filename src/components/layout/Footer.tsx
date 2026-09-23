@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MessageCircle, ShieldCheck, Truck, Lock, Percent } from 'lucide-react';
+import { ShieldCheck, Truck, Lock, Percent, WhatsappLogo } from '@phosphor-icons/react';
 import { useCatalogue } from '../../context/CatalogueContext';
 import { createGeneralWhatsAppUrl } from '../../lib/whatsapp';
 
@@ -76,7 +76,7 @@ export const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0C5149] hover:bg-[#0C5149]/80 text-white text-xs font-semibold transition-colors border border-emerald-800/40 whitespace-nowrap shadow-xs"
               >
-                <MessageCircle className="w-4 h-4 text-[#25D366] shrink-0" />
+                <WhatsappLogo size={18} weight="fill" className="text-[#25D366] shrink-0" />
                 <span>Chat on WhatsApp</span>
               </a>
               <p className="text-[11px] text-[#C59E42] mt-1.5 font-medium">

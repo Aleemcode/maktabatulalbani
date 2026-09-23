@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, MessageCircle, Check, Plus, Share2 } from 'lucide-react';
+import { ArrowLeft, WhatsappLogo, Check, Plus, ShareNetwork } from '@phosphor-icons/react';
 import { useCatalogue } from '../context/CatalogueContext';
 import { useCart } from '../context/CartContext';
 import { formatCurrency, createBookWhatsAppUrl } from '../lib/whatsapp';
@@ -11,6 +11,11 @@ export const BookDetail: React.FC = () => {
   const { books, categories, settings } = useCatalogue();
   const { addToCart, items } = useCart();
   const [copied, setCopied] = React.useState(false);
+
+  // Always start at the top of the page when loaded or routed
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [slug]);
 
   const book = books.find((b) => b.slug === slug || b.id === slug);
 
@@ -75,7 +80,7 @@ export const BookDetail: React.FC = () => {
             onClick={handleShare}
             className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border border-[#EFECE6] bg-[#FDFCFB] hover:bg-[#F4F4F5] text-xs font-medium text-[#52525B] transition-colors"
           >
-            <Share2 className="w-4 h-4" />
+            <ShareNetwork className="w-4 h-4" />
             <span>{copied ? 'Link copied to clipboard!' : 'Share this title'}</span>
           </button>
         </div>
@@ -179,7 +184,7 @@ export const BookDetail: React.FC = () => {
               rel="noopener noreferrer"
               className="w-full py-4 px-6 rounded-2xl bg-[#25D366] hover:bg-[#22c55e] text-white font-bold text-sm sm:text-base flex items-center justify-center gap-3 shadow-sm hover:shadow-md transition-all active:scale-98"
             >
-              <MessageCircle className="w-6 h-6 fill-white" />
+              <WhatsappLogo size={24} weight="fill" className="text-white" />
               <span>Order / Inquire for this Copy on WhatsApp</span>
             </a>
 
@@ -192,7 +197,7 @@ export const BookDetail: React.FC = () => {
                   : 'bg-white border-[#E4E4E7] hover:border-[#18181B] text-[#18181B]'
               }`}
             >
-              {inCart ? <Check className="w-4 h-4 text-emerald-600" /> : <Plus className="w-4 h-4" />}
+              {inCart ? <Check size={18} weight="bold" className="text-emerald-600" /> : <Plus size={18} weight="bold" />}
               <span>{inCart ? 'Added to Selection Bag' : 'Add to Multi-Book WhatsApp Inquiry'}</span>
             </button>
           </div>

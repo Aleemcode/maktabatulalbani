@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { Search, MessageCircle, Plus, Check } from 'lucide-react';
+import { MagnifyingGlass, WhatsappLogo, Plus, Check } from '@phosphor-icons/react';
 import { useCatalogue } from '../context/CatalogueContext';
 import { useCart } from '../context/CartContext';
 import { formatCurrency, createBookWhatsAppUrl } from '../lib/whatsapp';
@@ -72,7 +72,7 @@ export const Catalogue: React.FC = () => {
         <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-4">
           {/* Custom Search Input */}
           <div className="relative flex-1">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#8C9898]" />
+            <MagnifyingGlass size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#8C9898]" />
             <input
               type="text"
               value={searchTerm}
@@ -124,7 +124,7 @@ export const Catalogue: React.FC = () => {
                     : 'bg-[#FBF9F4] border-[#D4D4D8]'
                 }`}
               >
-                {inStockOnly && <Check className="w-3 h-3 stroke-[3]" />}
+                {inStockOnly && <Check size={12} weight="bold" />}
               </span>
               <span>In Stock Only</span>
             </button>
@@ -254,7 +254,7 @@ export const Catalogue: React.FC = () => {
                           : 'border-[#E8E4D8] hover:border-[#0C3934] text-[#0C3934]'
                       }`}
                     >
-                      {inCart ? <Check className="w-3.5 h-3.5 text-[#0C5149]" /> : <Plus className="w-3.5 h-3.5" />}
+                      {inCart ? <Check size={14} weight="bold" className="text-[#0C5149]" /> : <Plus size={14} weight="bold" />}
                       <span>{inCart ? 'Selected' : 'Select'}</span>
                     </button>
 
@@ -264,7 +264,7 @@ export const Catalogue: React.FC = () => {
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg bg-[#25D366] hover:bg-[#22c55e] text-white text-xs font-semibold transition-colors whitespace-nowrap"
                     >
-                      <MessageCircle className="w-3.5 h-3.5 fill-white shrink-0" />
+                      <WhatsappLogo size={16} weight="fill" className="text-white shrink-0" />
                       <span>Order</span>
                     </a>
                   </div>

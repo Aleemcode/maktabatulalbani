@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageCircle } from 'lucide-react';
+import { WhatsappLogo } from '@phosphor-icons/react';
 import { useCatalogue } from '../../context/CatalogueContext';
 import { createGeneralWhatsAppUrl } from '../../lib/whatsapp';
 
@@ -21,7 +21,7 @@ export const WhatsAppFloatingButton: React.FC = () => {
         aria-label="Direct inquiry on WhatsApp"
         className="relative flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-xl hover:scale-105 active:scale-95 transition-all duration-200"
       >
-        <MessageCircle className="w-7 h-7 fill-white" />
+        <WhatsappLogo size={30} weight="fill" className="text-white" />
         <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-emerald-400 border-2 border-white rounded-full animate-ping" />
         <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-emerald-500 border-2 border-white rounded-full" />
       </a>

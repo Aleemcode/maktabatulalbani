@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Clock, MessageCircle, BookOpen, Share2 } from 'lucide-react';
+import { ArrowLeft, Clock, WhatsappLogo, BookOpen, ShareNetwork } from '@phosphor-icons/react';
 import { useCatalogue } from '../context/CatalogueContext';
 import { formatCurrency, createBookWhatsAppUrl } from '../lib/whatsapp';
 
@@ -65,7 +65,7 @@ export const BlogPostDetail: React.FC = () => {
             onClick={handleShare}
             className="inline-flex items-center gap-1.5 text-xs text-[#71717A] hover:text-[#18181B]"
           >
-            <Share2 className="w-3.5 h-3.5" />
+            <ShareNetwork className="w-3.5 h-3.5" />
             <span>{copied ? 'Copied' : 'Share'}</span>
           </button>
         </div>
@@ -129,7 +129,7 @@ export const BlogPostDetail: React.FC = () => {
                   rel="noopener noreferrer"
                   className="mt-3 flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-[#25D366] text-white text-xs font-semibold"
                 >
-                  <MessageCircle className="w-3.5 h-3.5 fill-white" />
+                  <WhatsappLogo size={16} weight="fill" className="text-white" />
                   <span>Order on WhatsApp</span>
                 </a>
               </div>
