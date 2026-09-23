@@ -27,7 +27,13 @@ export const Navbar: React.FC = () => {
         <div className="bg-[#0C3934] text-[#F7EEDB] text-[11px] sm:text-xs py-1.5 sm:py-2 px-3 sm:px-4 text-center font-medium tracking-wide border-b border-[#0C5149]">
           <div className="max-w-7xl mx-auto flex items-center justify-center gap-1.5 sm:gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#C59E42] shrink-0" />
-            <span className="leading-tight">{settings.announcement_banner}</span>
+            {/* Reduced details on mobile for a clean, sleek single line */}
+            <span className="sm:hidden truncate">
+              Friday Jumu'ah Deals • Nationwide Delivery
+            </span>
+            <span className="hidden sm:inline">
+              {settings.announcement_banner}
+            </span>
           </div>
         </div>
       )}

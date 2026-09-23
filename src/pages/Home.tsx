@@ -125,11 +125,11 @@ export const Home: React.FC = () => {
 
       {/* Category Pills Bar */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between gap-3 mb-4">
           <h2 className="text-base sm:text-lg font-bold text-[#0C3934]">Browse Collections</h2>
-          <Link to="/catalogue" className="text-xs font-semibold text-[#C59E42] hover:text-[#0C3934] flex items-center gap-1">
+          <Link to="/catalogue" className="text-xs font-semibold text-[#C59E42] hover:text-[#0C3934] flex items-center gap-1 shrink-0 whitespace-nowrap">
             <span>View all categories</span>
-            <ArrowRight className="w-3 h-3" />
+            <ArrowRight className="w-3 h-3 shrink-0" />
           </Link>
         </div>
 
@@ -162,14 +162,14 @@ export const Home: React.FC = () => {
 
       {/* Featured Books Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 sm:gap-4 mb-6">
           <div>
             <h2 className="text-xl sm:text-2xl font-bold text-[#0C3934] font-serif-display">Available In Stock Titles</h2>
             <p className="text-xs text-[#5C6969] mt-0.5">Handpicked scholarly works and foundational references</p>
           </div>
-          <Link to="/catalogue" className="text-xs font-semibold text-[#0C5149] hover:text-[#0C3934] flex items-center gap-1">
+          <Link to="/catalogue" className="text-xs font-semibold text-[#0C5149] hover:text-[#0C3934] flex items-center gap-1 shrink-0 whitespace-nowrap self-start sm:self-auto">
             <span>See entire catalogue</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowRight className="w-3.5 h-3.5 shrink-0" />
           </Link>
         </div>
 
@@ -256,14 +256,14 @@ export const Home: React.FC = () => {
 
       {/* Reader Guidance & Blog Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 sm:gap-4 mb-6">
           <div>
             <h2 className="text-xl sm:text-2xl font-bold text-[#0C3934] font-serif-display">Reader Guidance & Insights</h2>
             <p className="text-xs text-[#5C6969] mt-0.5">Reflections on books, scholarly methodology, and cultivating a reading life</p>
           </div>
-          <Link to="/blog" className="text-xs font-semibold text-[#0C5149] hover:text-[#0C3934] flex items-center gap-1">
+          <Link to="/blog" className="text-xs font-semibold text-[#0C5149] hover:text-[#0C3934] flex items-center gap-1 shrink-0 whitespace-nowrap self-start sm:self-auto pt-0.5 sm:pt-0">
             <span>Read all articles</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowRight className="w-3.5 h-3.5 shrink-0" />
           </Link>
         </div>
 
@@ -291,14 +291,14 @@ export const Home: React.FC = () => {
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[#F6F2E9] mt-4 flex items-center justify-between">
-                <span className="text-xs text-[#5C6969]">{post.author}</span>
+              <div className="pt-4 border-t border-[#F6F2E9] mt-4 flex items-center justify-between gap-3">
+                <span className="text-xs text-[#5C6969] truncate min-w-0 font-medium">{post.author}</span>
                 <Link
                   to={`/blog/${post.slug}`}
-                  className="text-xs font-semibold text-[#0C3934] flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
+                  className="text-xs font-semibold text-[#0C3934] flex items-center gap-1 group-hover:translate-x-0.5 transition-transform whitespace-nowrap shrink-0"
                 >
                   <span>Continue reading</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-3.5 h-3.5 shrink-0" />
                 </Link>
               </div>
             </article>

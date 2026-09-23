@@ -64,14 +64,14 @@ export const Blog: React.FC = () => {
             </div>
 
             {/* Read CTA */}
-            <div className="pt-6 border-t border-[#F4F4F5] mt-6 flex items-center justify-between">
-              <span className="text-xs text-[#71717A]">{post.author}</span>
+            <div className="pt-5 sm:pt-6 border-t border-[#F4F4F5] mt-5 sm:mt-6 flex items-center justify-between gap-3">
+              <span className="text-xs text-[#71717A] truncate min-w-0 font-medium">{post.author}</span>
               <Link
                 to={`/blog/${post.slug}`}
-                className="text-xs font-semibold text-[#18181B] flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+                className="text-xs font-semibold text-[#18181B] flex items-center gap-1.5 group-hover:translate-x-1 transition-transform whitespace-nowrap shrink-0"
               >
                 <span>Read Full Essay</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </Link>
             </div>
           </article>

@@ -204,10 +204,10 @@ export const JumuahDeals: React.FC = () => {
           </div>
           <Link
             to="/catalogue"
-            className="text-xs font-semibold text-[#0C5149] hover:text-[#0C3934] flex items-center gap-1"
+            className="text-xs font-semibold text-[#0C5149] hover:text-[#0C3934] flex items-center gap-1 shrink-0 whitespace-nowrap self-start sm:self-auto"
           >
             <span>Browse entire collection</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowRight className="w-3.5 h-3.5 shrink-0" />
           </Link>
         </div>
 
