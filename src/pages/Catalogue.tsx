@@ -52,13 +52,13 @@ export const Catalogue: React.FC = () => {
   }, [books, activeCategoryParam, selectedLanguage, inStockOnly, searchTerm]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 space-y-6 sm:space-y-8">
       {/* Title & Description */}
       <div className="space-y-1">
         <span className="text-xs uppercase tracking-widest text-[#C59E42] font-semibold">
           BothLife Centre & Library
         </span>
-        <h1 className="text-3xl sm:text-4xl font-bold text-[#0C3934] font-serif-display">
+        <h1 className="text-2xl sm:text-4xl font-bold text-[#0C3934] font-serif-display">
           Book Collections
         </h1>
         <p className="text-xs sm:text-sm text-[#5C6969] max-w-2xl leading-relaxed">
@@ -67,26 +67,26 @@ export const Catalogue: React.FC = () => {
       </div>
 
       {/* Bespoke Styled Filter & Search Control Panel */}
-      <div className="bg-white rounded-3xl border border-[#E8E4D8] p-5 sm:p-6 space-y-5 shadow-xs">
+      <div className="bg-white rounded-3xl border border-[#E8E4D8] p-4 sm:p-6 space-y-4 sm:space-y-5 shadow-xs">
         {/* Top Row: Search Input + Language Segmented Filter + Custom Stock Toggle */}
-        <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-4">
+        <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-3 sm:gap-4">
           {/* Custom Search Input */}
           <div className="relative flex-1">
-            <MagnifyingGlass size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#8C9898]" />
+            <MagnifyingGlass size={18} className="absolute left-3.5 sm:left-4 top-1/2 -translate-y-1/2 text-[#8C9898]" />
             <input
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search by title, author, or keyword..."
-              className="w-full pl-11 pr-4 py-3 rounded-2xl border border-[#E8E4D8] bg-[#FBF9F4] text-xs sm:text-sm text-[#0C3934] placeholder:text-[#8C9898] focus:outline-none focus:border-[#0C3934] focus:ring-1 focus:ring-[#0C3934] transition-all"
+              className="w-full pl-10 sm:pl-11 pr-4 py-2.5 sm:py-3 rounded-2xl border border-[#E8E4D8] bg-[#FBF9F4] text-xs sm:text-sm text-[#0C3934] placeholder:text-[#8C9898] focus:outline-none focus:border-[#0C3934] focus:ring-1 focus:ring-[#0C3934] transition-all"
             />
           </div>
 
           {/* Controls Cluster */}
-          <div className="flex flex-wrap sm:flex-nowrap items-center gap-3">
+          <div className="flex flex-wrap sm:flex-nowrap items-center gap-2.5 sm:gap-3">
             {/* Custom Language Segmented Buttons */}
-            <div className="flex items-center p-1 rounded-2xl bg-[#F6F2E9] border border-[#E8E4D8]">
-              <span className="text-[11px] font-semibold text-[#5C6969] px-2.5 hidden sm:inline-block">
+            <div className="flex items-center p-1 rounded-2xl bg-[#F6F2E9] border border-[#E8E4D8] overflow-x-auto max-w-full">
+              <span className="text-[11px] font-semibold text-[#5C6969] px-2 hidden md:inline-block">
                 Language:
               </span>
               <div className="flex items-center gap-1">
@@ -95,7 +95,7 @@ export const Catalogue: React.FC = () => {
                     key={lang.value}
                     type="button"
                     onClick={() => setSelectedLanguage(lang.value)}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap ${
+                    className={`px-2.5 sm:px-3 py-1.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap cursor-pointer ${
                       selectedLanguage === lang.value
                         ? 'bg-[#0C3934] text-white shadow-xs'
                         : 'text-[#5C6969] hover:text-[#0C3934]'
@@ -111,7 +111,7 @@ export const Catalogue: React.FC = () => {
             <button
               type="button"
               onClick={() => setInStockOnly(!inStockOnly)}
-              className={`inline-flex items-center gap-2.5 px-4 py-2.5 rounded-2xl text-xs font-semibold border transition-all whitespace-nowrap cursor-pointer select-none ${
+              className={`inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-2xl text-xs font-semibold border transition-all whitespace-nowrap cursor-pointer select-none ${
                 inStockOnly
                   ? 'bg-[#0C3934] text-white border-[#0C3934] shadow-xs'
                   : 'bg-white text-[#5C6969] border-[#E8E4D8] hover:border-[#0C3934]'
@@ -132,8 +132,8 @@ export const Catalogue: React.FC = () => {
         </div>
 
         {/* Bottom Row: Category Pills Bar */}
-        <div className="pt-4 border-t border-[#F6F2E9]">
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+        <div className="pt-3 sm:pt-4 border-t border-[#F6F2E9]">
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
             <button
               onClick={() => setSearchParams({})}
               className={`px-3.5 py-1.5 rounded-full text-xs font-semibold shrink-0 transition-colors whitespace-nowrap ${
@@ -248,21 +248,21 @@ export const Catalogue: React.FC = () => {
                   <div className="grid grid-cols-2 gap-2">
                     <button
                       onClick={() => addToCart(book)}
-                      className={`flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl text-xs font-medium border transition-colors whitespace-nowrap ${
+                      className={`flex items-center justify-center gap-1.5 py-2 px-1.5 sm:px-2 rounded-xl text-xs font-medium border transition-colors whitespace-nowrap cursor-pointer ${
                         inCart
                           ? 'bg-[#F6F2E9] border-[#C59E42] text-[#0C3934]'
                           : 'border-[#E8E4D8] hover:border-[#0C3934] text-[#0C3934]'
                       }`}
                     >
-                      {inCart ? <Check size={14} weight="bold" className="text-[#0C5149]" /> : <Plus size={14} weight="bold" />}
-                      <span>{inCart ? 'Selected' : 'Select'}</span>
+                      {inCart ? <Check size={14} weight="bold" className="text-[#0C5149] shrink-0" /> : <Plus size={14} weight="bold" className="shrink-0" />}
+                      <span className="truncate">{inCart ? 'Selected' : 'Select'}</span>
                     </button>
 
                     <a
                       href={createBookWhatsAppUrl(book, settings)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg bg-[#25D366] hover:bg-[#22c55e] text-white text-xs font-semibold transition-colors whitespace-nowrap"
+                      className="flex items-center justify-center gap-1.5 py-2 px-1.5 sm:px-2 rounded-lg bg-[#25D366] hover:bg-[#22c55e] text-white text-xs font-semibold transition-colors whitespace-nowrap"
                     >
                       <WhatsappLogo size={16} weight="fill" className="text-white shrink-0" />
                       <span>Order</span>

@@ -23,7 +23,7 @@ export const CartDrawer: React.FC = () => {
         onClick={() => setIsOpen(false)}
       />
 
-      <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
+      <div className="fixed inset-y-0 right-0 max-w-full flex pl-4 sm:pl-10">
         <div className="w-screen max-w-md bg-[#FDFCFB] shadow-2xl flex flex-col">
           {/* Header */}
           <div className="p-5 border-b border-[#EFECE6] flex items-center justify-between">
@@ -117,9 +117,9 @@ export const CartDrawer: React.FC = () => {
 
               <button
                 onClick={handleWhatsAppCheckout}
-                className="w-full py-3.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#22c55e] text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-sm transition-all"
+                className="w-full py-3.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#22c55e] text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm transition-all whitespace-nowrap cursor-pointer"
               >
-                <WhatsappLogo size={22} weight="fill" className="text-white" />
+                <WhatsappLogo size={20} weight="fill" className="text-white shrink-0" />
                 <span>Send Order Inquiry on WhatsApp</span>
               </button>
 

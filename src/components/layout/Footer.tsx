@@ -60,10 +60,10 @@ export const Footer: React.FC = () => {
           {/* Brand info */}
           <div className="space-y-4 md:col-span-1">
             <div className="flex items-center gap-3">
-              <img src="/logo.svg" alt="Maktabah Logo" className="w-10 h-10 object-contain filter invert" />
+              <img src="/logo.svg" alt="Maktabah Logo" className="w-10 h-10 object-contain filter invert shrink-0" />
               <div>
                 <span className="text-white font-bold text-base block leading-tight">{settings.store_name}</span>
-                <span className="text-[#C59E42] text-[11px] font-semibold tracking-wider uppercase block">by BothLife Centre & Library</span>
+                <span className="text-[#C59E42] text-[10.5px] sm:text-[11px] font-semibold tracking-wider uppercase block whitespace-nowrap">by BothLife Centre & Library</span>
               </div>
             </div>
             <p className="text-xs leading-relaxed text-zinc-400">
@@ -142,11 +142,11 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom copyright */}
-        <div className="pt-8 border-t border-[#0C5149] flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-400 gap-4">
+        <div className="pt-8 border-t border-[#0C5149] flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-400 gap-3 text-center sm:text-left">
           <p>© {new Date().getFullYear()} {settings.store_name}. All rights reserved.</p>
-          <p className="flex items-center gap-1">
+          <p className="flex items-center justify-center gap-1 flex-wrap">
             <span>Official initiative of</span>
-            <strong className="text-white font-semibold">BothLife Centre and Library</strong>
+            <strong className="text-white font-semibold whitespace-nowrap">BothLife Centre and Library</strong>
           </p>
         </div>
       </div>

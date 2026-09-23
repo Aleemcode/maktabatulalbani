@@ -94,20 +94,20 @@ export const PostEditor: React.FC = () => {
   return (
     <div className="max-w-4xl space-y-6">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5 sm:gap-3">
           <Link
             to="/admin/blog"
-            className="p-2 rounded-xl bg-white border border-[#E8E4D8] text-[#0C3934] hover:border-[#0C3934] transition-colors shadow-2xs"
+            className="p-2 rounded-xl bg-white border border-[#E8E4D8] text-[#0C3934] hover:border-[#0C3934] transition-colors shadow-2xs shrink-0"
           >
             <ArrowLeft className="w-4 h-4" />
           </Link>
-          <h1 className="text-2xl sm:text-3xl font-bold font-serif-display text-[#0C3934]">
+          <h1 className="text-xl sm:text-3xl font-bold font-serif-display text-[#0C3934] leading-tight">
             {isEditing ? 'Edit Article' : 'Write New Article'}
           </h1>
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="bg-white p-6 sm:p-8 rounded-2xl border border-[#E8E4D8] space-y-6 shadow-xs">
+      <form onSubmit={handleSubmit} className="bg-white p-4 sm:p-8 rounded-2xl border border-[#E8E4D8] space-y-5 sm:space-y-6 shadow-xs">
         {/* Title */}
         <div>
           <label className="block text-xs font-semibold text-[#0C3934] mb-1">Article Headline *</label>
@@ -230,16 +230,16 @@ export const PostEditor: React.FC = () => {
         </div>
 
         {/* Actions */}
-        <div className="pt-4 border-t border-[#E8E4D8] flex items-center justify-end gap-3">
+        <div className="pt-4 border-t border-[#E8E4D8] flex flex-col-reverse sm:flex-row sm:items-center justify-end gap-3">
           <Link
             to="/admin/blog"
-            className="px-5 py-2.5 rounded-xl border border-[#E8E4D8] text-xs font-semibold text-[#5C6969] hover:border-[#0C3934] transition-colors"
+            className="px-5 py-2.5 rounded-xl border border-[#E8E4D8] text-xs font-semibold text-[#5C6969] hover:border-[#0C3934] transition-colors text-center w-full sm:w-auto"
           >
             Cancel
           </Link>
           <button
             type="submit"
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#0C3934] hover:bg-[#0C5149] text-white text-xs font-semibold shadow-xs transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-[#0C3934] hover:bg-[#0C5149] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer w-full sm:w-auto"
           >
             <FloppyDisk className="w-4 h-4 text-[#C59E42]" />
             <span>{isEditing ? 'Save Article' : 'Publish Article'}</span>

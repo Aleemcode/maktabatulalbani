@@ -60,7 +60,7 @@ export const BookDetail: React.FC = () => {
       </div>
 
       {/* Main Book Presentation Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 bg-white rounded-3xl border border-[#EFECE6] p-6 sm:p-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 bg-white rounded-3xl border border-[#EFECE6] p-4 sm:p-8 lg:p-10">
         {/* Cover Preview (Left 5 Cols) */}
         <div className="lg:col-span-5 space-y-4">
           <div className="relative aspect-3/4 rounded-2xl overflow-hidden bg-[#F4F4F5] border border-[#EFECE6] shadow-xs">
@@ -78,7 +78,7 @@ export const BookDetail: React.FC = () => {
 
           <button
             onClick={handleShare}
-            className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border border-[#EFECE6] bg-[#FDFCFB] hover:bg-[#F4F4F5] text-xs font-medium text-[#52525B] transition-colors"
+            className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border border-[#EFECE6] bg-[#FDFCFB] hover:bg-[#F4F4F5] text-xs font-medium text-[#52525B] transition-colors cursor-pointer"
           >
             <ShareNetwork className="w-4 h-4" />
             <span>{copied ? 'Link copied to clipboard!' : 'Share this title'}</span>
@@ -99,33 +99,33 @@ export const BookDetail: React.FC = () => {
             )}
 
             {/* Titles */}
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#18181B] leading-tight font-serif-display">
+            <h1 className="text-xl sm:text-3xl font-bold text-[#18181B] leading-snug sm:leading-tight font-serif-display">
               {book.title}
             </h1>
 
             {book.arabic_title && (
-              <p className="text-lg font-arabic text-[#71717A] leading-relaxed">
+              <p className="text-base sm:text-lg font-arabic text-[#71717A] leading-relaxed">
                 {book.arabic_title}
               </p>
             )}
 
-            <p className="text-sm font-medium text-[#52525B]">
+            <p className="text-xs sm:text-sm font-medium text-[#52525B]">
               Author:{' '}
               <span className="text-[#18181B] font-semibold">{book.author}</span>
             </p>
 
             {/* Price badge */}
-            <div className="flex items-baseline gap-3 pt-2">
+            <div className="flex flex-wrap items-baseline gap-2 sm:gap-3 pt-2">
               <span className="text-2xl sm:text-3xl font-bold text-[#18181B]">{price}</span>
               {originalPrice && (
-                <span className="text-base text-[#A1A1AA] line-through">{originalPrice}</span>
+                <span className="text-sm sm:text-base text-[#A1A1AA] line-through">{originalPrice}</span>
               )}
               {book.in_stock ? (
-                <span className="text-xs px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-semibold border border-emerald-200">
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-semibold border border-emerald-200 whitespace-nowrap">
                   In Stock
                 </span>
               ) : (
-                <span className="text-xs px-2.5 py-0.5 rounded-full bg-zinc-100 text-zinc-600 font-semibold">
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-zinc-100 text-zinc-600 font-semibold whitespace-nowrap">
                   Pre-order / Special Request
                 </span>
               )}
@@ -142,33 +142,33 @@ export const BookDetail: React.FC = () => {
             {/* Specifications Matrix */}
             <div className="pt-4 border-t border-[#F4F4F5]">
               <h3 className="text-xs font-semibold text-[#18181B] uppercase tracking-wider mb-3">Book Specifications</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 text-xs">
                 {book.publisher && (
-                  <div className="p-2.5 rounded-lg bg-[#FAF9F6] border border-[#EFECE6]">
+                  <div className="p-2.5 rounded-lg bg-[#FAF9F6] border border-[#EFECE6] min-w-0">
                     <span className="text-[#71717A] block text-[10px]">Publisher</span>
-                    <span className="font-semibold text-[#18181B]">{book.publisher}</span>
+                    <span className="font-semibold text-[#18181B] block truncate">{book.publisher}</span>
                   </div>
                 )}
                 {book.binding && (
-                  <div className="p-2.5 rounded-lg bg-[#FAF9F6] border border-[#EFECE6]">
+                  <div className="p-2.5 rounded-lg bg-[#FAF9F6] border border-[#EFECE6] min-w-0">
                     <span className="text-[#71717A] block text-[10px]">Binding</span>
-                    <span className="font-semibold text-[#18181B]">{book.binding}</span>
+                    <span className="font-semibold text-[#18181B] block truncate">{book.binding}</span>
                   </div>
                 )}
-                <div className="p-2.5 rounded-lg bg-[#FAF9F6] border border-[#EFECE6]">
+                <div className="p-2.5 rounded-lg bg-[#FAF9F6] border border-[#EFECE6] min-w-0">
                   <span className="text-[#71717A] block text-[10px]">Language</span>
-                  <span className="font-semibold text-[#18181B]">{book.language}</span>
+                  <span className="font-semibold text-[#18181B] block truncate">{book.language}</span>
                 </div>
                 {book.pages && (
-                  <div className="p-2.5 rounded-lg bg-[#FAF9F6] border border-[#EFECE6]">
+                  <div className="p-2.5 rounded-lg bg-[#FAF9F6] border border-[#EFECE6] min-w-0">
                     <span className="text-[#71717A] block text-[10px]">Pages</span>
-                    <span className="font-semibold text-[#18181B]">{book.pages}</span>
+                    <span className="font-semibold text-[#18181B] block truncate">{book.pages}</span>
                   </div>
                 )}
                 {book.isbn && (
-                  <div className="p-2.5 rounded-lg bg-[#FAF9F6] border border-[#EFECE6]">
+                  <div className="p-2.5 rounded-lg bg-[#FAF9F6] border border-[#EFECE6] min-w-0">
                     <span className="text-[#71717A] block text-[10px]">ISBN</span>
-                    <span className="font-semibold text-[#18181B] font-mono text-[11px]">{book.isbn}</span>
+                    <span className="font-semibold text-[#18181B] font-mono text-[11px] block truncate">{book.isbn}</span>
                   </div>
                 )}
               </div>
@@ -182,22 +182,22 @@ export const BookDetail: React.FC = () => {
               href={createBookWhatsAppUrl(book, settings)}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-4 px-6 rounded-2xl bg-[#25D366] hover:bg-[#22c55e] text-white font-bold text-sm sm:text-base flex items-center justify-center gap-3 shadow-sm hover:shadow-md transition-all active:scale-98"
+              className="w-full py-3.5 px-4 sm:px-6 rounded-2xl bg-[#25D366] hover:bg-[#22c55e] text-white font-bold text-xs sm:text-sm md:text-base flex items-center justify-center gap-2.5 sm:gap-3 shadow-sm hover:shadow-md transition-all active:scale-98 text-center"
             >
-              <WhatsappLogo size={24} weight="fill" className="text-white" />
+              <WhatsappLogo size={22} weight="fill" className="text-white shrink-0" />
               <span>Order / Inquire for this Copy on WhatsApp</span>
             </a>
 
             {/* Add to multi-selection inquiry */}
             <button
               onClick={() => addToCart(book)}
-              className={`w-full py-3 px-6 rounded-2xl text-xs sm:text-sm font-semibold border flex items-center justify-center gap-2 transition-all ${
+              className={`w-full py-3 px-4 sm:px-6 rounded-2xl text-xs sm:text-sm font-semibold border flex items-center justify-center gap-2 transition-all cursor-pointer text-center ${
                 inCart
                   ? 'bg-[#F4F4F5] border-[#D4D4D8] text-[#18181B]'
                   : 'bg-white border-[#E4E4E7] hover:border-[#18181B] text-[#18181B]'
               }`}
             >
-              {inCart ? <Check size={18} weight="bold" className="text-emerald-600" /> : <Plus size={18} weight="bold" />}
+              {inCart ? <Check size={16} weight="bold" className="text-emerald-600 shrink-0" /> : <Plus size={16} weight="bold" className="shrink-0" />}
               <span>{inCart ? 'Added to Selection Bag' : 'Add to Multi-Book WhatsApp Inquiry'}</span>
             </button>
           </div>

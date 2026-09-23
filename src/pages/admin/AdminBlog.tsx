@@ -18,15 +18,15 @@ export const AdminBlog: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold font-serif-display text-[#0C3934]">Reader Blog Management</h1>
+          <h1 className="text-xl sm:text-3xl font-bold font-serif-display text-[#0C3934]">Reader Blog Management</h1>
           <p className="text-xs text-[#5C6969] mt-0.5">Write and publish guides, book reviews, and reading culture essays.</p>
         </div>
 
         <Link
           to="/admin/blog/new"
-          className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#0C3934] hover:bg-[#0C5149] text-white text-xs font-semibold shadow-xs transition-colors shrink-0 whitespace-nowrap"
+          className="inline-flex items-center justify-center gap-1.5 w-full sm:w-auto px-4 py-2.5 rounded-xl bg-[#0C3934] hover:bg-[#0C5149] text-white text-xs font-semibold shadow-xs transition-colors shrink-0 whitespace-nowrap"
         >
           <Plus className="w-4 h-4 text-[#C59E42]" />
           <span>Write New Article</span>
@@ -35,7 +35,8 @@ export const AdminBlog: React.FC = () => {
 
       {/* Posts Table */}
       <div className="bg-white rounded-2xl border border-[#E8E4D8] overflow-hidden shadow-xs">
-        <table className="w-full text-left text-xs text-[#5C6969]">
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[580px] text-left text-xs text-[#5C6969]">
           <thead className="bg-[#F6F2E9] text-[#0C3934] uppercase text-[10px] font-bold border-b border-[#E8E4D8]">
             <tr>
               <th className="py-3.5 px-4">Article</th>
@@ -102,6 +103,7 @@ export const AdminBlog: React.FC = () => {
             )}
           </tbody>
         </table>
+        </div>
       </div>
     </div>
   );

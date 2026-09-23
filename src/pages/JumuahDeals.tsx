@@ -43,7 +43,7 @@ export const JumuahDeals: React.FC = () => {
     <div className="space-y-16 py-8">
       {/* Hero Showcase with BothLife Brand Palette */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-3xl overflow-hidden bg-[#0C3934] text-white p-6 sm:p-12 lg:p-14 border border-[#0C5149] shadow-xl">
+        <div className="relative rounded-3xl overflow-hidden bg-[#0C3934] text-white p-5 sm:p-10 lg:p-14 border border-[#0C5149] shadow-xl">
           {/* Subtle Decorative Arch Glows */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#0C5149]/40 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#C59E42]/10 rounded-full blur-2xl pointer-events-none -ml-20 -mb-20" />
@@ -60,24 +60,24 @@ export const JumuahDeals: React.FC = () => {
             />
           </div>
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
             {/* Left Column: Information & Conversion */}
-            <div className="lg:col-span-7 space-y-6">
+            <div className="lg:col-span-7 space-y-5 sm:space-y-6">
               {/* Trust Reward Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#C59E42]/20 border border-[#C59E42]/50 text-xs font-semibold text-[#F7EEDB]">
-                <Percent className="w-3.5 h-3.5 text-[#C59E42]" />
-                <span>10% of all profits go directly to Zādut-Tālib Trust</span>
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-[#C59E42]/20 border border-[#C59E42]/50 text-[10px] sm:text-xs font-semibold text-[#F7EEDB] whitespace-nowrap max-w-full">
+                <Percent className="w-3.5 h-3.5 text-[#C59E42] shrink-0" />
+                <span className="truncate">10% of all profits go directly to Zādut-Tālib Trust</span>
               </div>
 
               {/* Main Headline */}
               <div className="space-y-2">
-                <span className="block text-xs uppercase tracking-widest text-[#C59E42] font-semibold">
+                <span className="block text-[11px] sm:text-xs uppercase tracking-widest text-[#C59E42] font-semibold">
                   BothLife Centre and Library Presents
                 </span>
                 <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-serif-display tracking-tight text-white leading-tight">
                   Jumu'ah <span className="text-[#C59E42]">Deals</span>
                 </h1>
-                <p className="text-sm sm:text-base font-medium text-emerald-100 tracking-wide">
+                <p className="text-xs sm:text-sm md:text-base font-medium text-emerald-100 tracking-wide">
                   HAPPENING EVERY FRIDAY — AFTER JUMU'AH
                 </p>
               </div>
@@ -87,10 +87,10 @@ export const JumuahDeals: React.FC = () => {
               </p>
 
               {/* Quick Actions */}
-              <div className="flex flex-wrap items-center gap-3 pt-2">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 pt-2">
                 <button
                   onClick={handleGeneralDealWhatsApp}
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#22c55e] text-white text-xs sm:text-sm font-bold shadow-md transition-all active:scale-98 whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-[#25D366] hover:bg-[#22c55e] text-white text-xs sm:text-sm font-bold shadow-md transition-all active:scale-98 whitespace-nowrap cursor-pointer"
                 >
                   <WhatsappLogo size={18} weight="fill" className="text-white shrink-0" />
                   <span>Chat with Abu Abdillah</span>
@@ -100,7 +100,7 @@ export const JumuahDeals: React.FC = () => {
                   href="/jumuah-deals-flyer.png"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-semibold border border-white/20 transition-colors whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-semibold border border-white/20 transition-colors whitespace-nowrap"
                 >
                   <span>View Official Flyer</span>
                   <ArrowRight className="w-4 h-4" />
@@ -109,13 +109,13 @@ export const JumuahDeals: React.FC = () => {
             </div>
 
             {/* Right Column: Engaging Books Showcase */}
-            <div className="lg:col-span-5 relative flex items-center justify-center pt-4 lg:pt-0">
-              <div className="relative w-full max-w-xs sm:max-w-sm flex items-center justify-center py-6">
+            <div className="lg:col-span-5 relative flex items-center justify-center pt-2 lg:pt-0 overflow-hidden sm:overflow-visible">
+              <div className="relative w-full max-w-[280px] sm:max-w-sm flex items-center justify-center py-6">
                 {/* Background Ambient Glow */}
                 <div className="absolute inset-0 bg-radial from-[#C59E42]/20 via-transparent to-transparent blur-2xl pointer-events-none" />
 
                 {/* Left Angled Book */}
-                <div className="absolute left-2 sm:left-4 z-10 -rotate-8 -translate-y-2 hover:-rotate-4 transition-all duration-300 w-28 sm:w-36 aspect-3/4 rounded-xl overflow-hidden shadow-2xl border border-white/15 bg-[#0C3934]">
+                <div className="absolute left-1 sm:left-4 z-10 -rotate-8 -translate-y-2 hover:-rotate-4 transition-all duration-300 w-24 sm:w-36 aspect-3/4 rounded-xl overflow-hidden shadow-2xl border border-white/15 bg-[#0C3934]">
                   <img
                     src="/books/al-mumti-ajrumiyyah.jpg"
                     alt="الممتع في شرح الآجرّوميّة"
@@ -125,7 +125,7 @@ export const JumuahDeals: React.FC = () => {
                 </div>
 
                 {/* Right Angled Book */}
-                <div className="absolute right-2 sm:right-4 z-10 rotate-8 -translate-y-1 hover:rotate-4 transition-all duration-300 w-28 sm:w-36 aspect-3/4 rounded-xl overflow-hidden shadow-2xl border border-white/15 bg-[#0C3934]">
+                <div className="absolute right-1 sm:right-4 z-10 rotate-8 -translate-y-1 hover:rotate-4 transition-all duration-300 w-24 sm:w-36 aspect-3/4 rounded-xl overflow-hidden shadow-2xl border border-white/15 bg-[#0C3934]">
                   <img
                     src="/books/al-mahajjah-al-bayda.jpg"
                     alt="المحجة البيضاء"
@@ -135,7 +135,7 @@ export const JumuahDeals: React.FC = () => {
                 </div>
 
                 {/* Center Foreground Hero Book */}
-                <div className="relative z-20 w-36 sm:w-44 aspect-3/4 rounded-2xl overflow-hidden shadow-[0_25px_50px_rgba(0,0,0,0.8)] border-2 border-[#C59E42] bg-[#0C3934] transform hover:scale-105 transition-transform duration-300 group">
+                <div className="relative z-20 w-32 sm:w-44 aspect-3/4 rounded-2xl overflow-hidden shadow-[0_25px_50px_rgba(0,0,0,0.8)] border-2 border-[#C59E42] bg-[#0C3934] transform hover:scale-105 transition-transform duration-300 group">
                   <img
                     src="/books/at-tibyan-an-nawawi.jpg"
                     alt="التبيان في آداب حملة القرآن"
@@ -151,7 +151,7 @@ export const JumuahDeals: React.FC = () => {
                 </div>
 
                 {/* Floating Bottom Trust Label */}
-                <div className="absolute -bottom-2 z-30 px-3.5 py-1.5 rounded-full bg-[#0C3934]/95 border border-[#C59E42]/80 shadow-lg text-[11px] font-semibold text-[#F7EEDB] flex items-center gap-1.5 backdrop-blur-xs whitespace-nowrap">
+                <div className="absolute -bottom-2 z-30 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-[#0C3934]/95 border border-[#C59E42]/80 shadow-lg text-[10px] sm:text-[11px] font-semibold text-[#F7EEDB] flex items-center gap-1.5 backdrop-blur-xs whitespace-nowrap">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#25D366]" />
                   <span>Curated Jumu'ah Special Copies</span>
                 </div>
@@ -262,23 +262,23 @@ export const JumuahDeals: React.FC = () => {
                   <div className="grid grid-cols-2 gap-2">
                     <button
                       onClick={() => addToCart(book)}
-                      className={`flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg text-xs font-medium border transition-colors ${
+                      className={`flex items-center justify-center gap-1.5 py-2 px-1.5 sm:px-2 rounded-lg text-xs font-medium border transition-colors whitespace-nowrap cursor-pointer ${
                         inCart
                           ? 'bg-[#F6F2E9] border-[#C59E42] text-[#0C3934]'
                           : 'border-[#E8E4D8] hover:border-[#0C3934] text-[#0C3934]'
                       }`}
                     >
-                      {inCart ? <Check size={14} weight="bold" className="text-[#0C5149]" /> : <Plus size={14} weight="bold" />}
-                      <span>{inCart ? 'Selected' : 'Select'}</span>
+                      {inCart ? <Check size={14} weight="bold" className="text-[#0C5149] shrink-0" /> : <Plus size={14} weight="bold" className="shrink-0" />}
+                      <span className="truncate">{inCart ? 'Selected' : 'Select'}</span>
                     </button>
 
                     <a
                       href={createBookWhatsAppUrl(book, settings)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg bg-[#25D366] hover:bg-[#22c55e] text-white text-xs font-semibold transition-colors"
+                      className="flex items-center justify-center gap-1.5 py-2 px-1.5 sm:px-2 rounded-lg bg-[#25D366] hover:bg-[#22c55e] text-white text-xs font-semibold transition-colors whitespace-nowrap"
                     >
-                      <WhatsappLogo size={16} weight="fill" className="text-white" />
+                      <WhatsappLogo size={16} weight="fill" className="text-white shrink-0" />
                       <span>Order</span>
                     </a>
                   </div>

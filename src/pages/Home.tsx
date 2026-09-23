@@ -18,36 +18,36 @@ export const Home: React.FC = () => {
     <div className="space-y-16 py-8">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-[#E8E4D8] bg-white p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 shadow-xs">
-          <div className="space-y-6 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F6F2E9] border border-[#E8E4D8] text-xs font-semibold text-[#0C3934]">
-              <Sparkle size={15} weight="fill" className="text-[#C59E42]" />
-              <span>BothLife Centre & Library • Official Catalogue</span>
+        <div className="rounded-3xl border border-[#E8E4D8] bg-white p-5 sm:p-10 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 shadow-xs">
+          <div className="space-y-5 sm:space-y-6 max-w-2xl w-full">
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-[#F6F2E9] border border-[#E8E4D8] text-[10px] sm:text-xs font-semibold text-[#0C3934] max-w-full">
+              <Sparkle size={14} weight="fill" className="text-[#C59E42] shrink-0" />
+              <span className="truncate">BothLife Centre & Library • Official Catalogue</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#0C3934] leading-tight font-serif-display">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0C3934] leading-tight font-serif-display">
               Curated Scholarly Works & Essential Islamic Literature
             </h1>
 
-            <p className="text-base sm:text-lg text-[#5C6969] leading-relaxed">
+            <p className="text-sm sm:text-lg text-[#5C6969] leading-relaxed">
               Explore authentic classical texts, the seminal works of Imam al-Albani, and essential study guides for students of knowledge. Inquire and purchase directly via WhatsApp.
             </p>
 
             {/* Search Box */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 pt-2">
               <div className="relative flex-1">
                 <MagnifyingGlass size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#A1A1AA]" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search by title, author, or keyword (e.g. Albani, Ajrumiyyah, Hadith)..."
-                  className="w-full pl-10 pr-4 py-3 rounded-xl border border-[#E8E4D8] bg-[#FBF9F4] text-sm text-[#0C3934] focus:outline-none focus:ring-2 focus:ring-[#0C3934]/10"
+                  placeholder="Search title, author, or keyword (e.g. Albani, Hadith)..."
+                  className="w-full pl-10 pr-4 py-2.5 sm:py-3 rounded-xl border border-[#E8E4D8] bg-[#FBF9F4] text-xs sm:text-sm text-[#0C3934] focus:outline-none focus:ring-2 focus:ring-[#0C3934]/10"
                 />
               </div>
               <Link
                 to="/catalogue"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#0C3934] text-white font-semibold text-sm hover:bg-[#0C5149] transition-all shadow-xs"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-xl bg-[#0C3934] text-white font-semibold text-xs sm:text-sm hover:bg-[#0C5149] transition-all shadow-xs whitespace-nowrap"
               >
                 <span>Browse All</span>
                 <ArrowRight className="w-4 h-4" />
@@ -56,17 +56,17 @@ export const Home: React.FC = () => {
           </div>
 
           {/* Hero Emblem Showcase */}
-          <div className="flex flex-col items-center justify-center p-8 bg-[#F6F2E9] rounded-3xl border border-[#E8E4D8] shrink-0">
-            <img src="/logo.svg" alt="Maktabah Emblem" className="w-44 h-44 object-contain" />
-            <span className="font-arabic text-xl font-bold mt-4 text-[#0C3934]">مكتبة الإمام الألباني</span>
-            <span className="text-xs text-[#C59E42] mt-1 font-semibold tracking-wider uppercase">by BothLife Centre & Library</span>
+          <div className="flex flex-col items-center justify-center p-6 sm:p-8 bg-[#F6F2E9] rounded-3xl border border-[#E8E4D8] shrink-0 w-full lg:w-auto">
+            <img src="/logo.svg" alt="Maktabah Emblem" className="w-28 h-28 sm:w-40 sm:h-40 object-contain" />
+            <span className="font-arabic text-lg sm:text-xl font-bold mt-3 sm:mt-4 text-[#0C3934]">مكتبة الإمام الألباني</span>
+            <span className="text-[10px] sm:text-xs text-[#C59E42] mt-1 font-semibold tracking-wider uppercase whitespace-nowrap">by BothLife Centre & Library</span>
           </div>
         </div>
       </section>
 
       {/* Jumu'ah Deals Feature Ribbon */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-[#0C3934] border border-[#0C5149] p-6 sm:p-8 lg:p-10 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-md relative overflow-hidden">
+        <div className="rounded-3xl bg-[#0C3934] border border-[#0C5149] p-5 sm:p-8 lg:p-10 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-md relative overflow-hidden">
           {/* Subtle Logo Watermark */}
           <div 
             className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none opacity-[0.05] select-none mix-blend-screen translate-x-12"
@@ -80,8 +80,8 @@ export const Home: React.FC = () => {
           </div>
 
           <div className="space-y-2 text-center md:text-left z-10 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C59E42]/20 border border-[#C59E42]/40 text-xs font-semibold text-[#F7EEDB]">
-              <Percent className="w-3.5 h-3.5 text-[#C59E42]" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C59E42]/20 border border-[#C59E42]/40 text-[10px] sm:text-xs font-semibold text-[#F7EEDB] whitespace-nowrap">
+              <Percent className="w-3.5 h-3.5 text-[#C59E42] shrink-0" />
               <span>Happening Every Friday — After Jumu'ah</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold font-serif-display text-white">
@@ -92,7 +92,7 @@ export const Home: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex items-center gap-4 shrink-0 z-10">
+          <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 z-10 w-full sm:w-auto">
             {/* Mini Book Stack Preview */}
             <div className="hidden lg:flex items-center -space-x-3">
               <img
@@ -114,7 +114,7 @@ export const Home: React.FC = () => {
 
             <Link
               to="/jumuah-deals"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#C59E42] hover:bg-[#b89a4f] text-[#0C3934] text-xs font-bold transition-all shadow-sm whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#C59E42] hover:bg-[#b89a4f] text-[#0C3934] text-xs font-bold transition-all shadow-sm whitespace-nowrap"
             >
               <span>Explore Jumu'ah Deals</span>
               <ArrowRight className="w-4 h-4" />
@@ -126,14 +126,14 @@ export const Home: React.FC = () => {
       {/* Category Pills Bar */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-bold text-[#0C3934]">Browse Collections</h2>
+          <h2 className="text-base sm:text-lg font-bold text-[#0C3934]">Browse Collections</h2>
           <Link to="/catalogue" className="text-xs font-semibold text-[#C59E42] hover:text-[#0C3934] flex items-center gap-1">
             <span>View all categories</span>
             <ArrowRight className="w-3 h-3" />
           </Link>
         </div>
 
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
           <button
             onClick={() => setSelectedCategory(null)}
             className={`px-4 py-2 rounded-full text-xs font-semibold shrink-0 transition-colors ${
@@ -227,23 +227,23 @@ export const Home: React.FC = () => {
                   <div className="grid grid-cols-2 gap-2">
                     <button
                       onClick={() => addToCart(book)}
-                      className={`flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg text-xs font-medium border transition-colors ${
+                      className={`flex items-center justify-center gap-1.5 py-2 px-1.5 sm:px-2 rounded-lg text-xs font-medium border transition-colors whitespace-nowrap cursor-pointer ${
                         inCart
                           ? 'bg-[#F6F2E9] border-[#C59E42] text-[#0C3934]'
                           : 'border-[#E8E4D8] hover:border-[#0C3934] text-[#0C3934]'
                       }`}
                     >
-                      {inCart ? <Check size={14} weight="bold" className="text-[#0C5149]" /> : <Plus size={14} weight="bold" />}
-                      <span>{inCart ? 'Selected' : 'Select'}</span>
+                      {inCart ? <Check size={14} weight="bold" className="text-[#0C5149] shrink-0" /> : <Plus size={14} weight="bold" className="shrink-0" />}
+                      <span className="truncate">{inCart ? 'Selected' : 'Select'}</span>
                     </button>
 
                     <a
                       href={createBookWhatsAppUrl(book, settings)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg bg-[#25D366] hover:bg-[#22c55e] text-white text-xs font-semibold transition-colors"
+                      className="flex items-center justify-center gap-1.5 py-2 px-1.5 sm:px-2 rounded-lg bg-[#25D366] hover:bg-[#22c55e] text-white text-xs font-semibold transition-colors whitespace-nowrap"
                     >
-                      <WhatsappLogo size={16} weight="fill" className="text-white" />
+                      <WhatsappLogo size={16} weight="fill" className="text-white shrink-0" />
                       <span>Order</span>
                     </a>
                   </div>
