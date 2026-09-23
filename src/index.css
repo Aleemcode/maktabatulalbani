@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-arabic: 'Amiri', 'Cairo', serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* BothLife x Maktabah Imam Albani Official Brand Palette */
+    --color-pine-deep: #0C3934;     /* Deep Brand Forest Pine */
+    --color-pine-teal: #0C5149;     /* Brand Emerald Teal */
+    --color-gold: #C59E42;          /* Heritage Islamic Gold */
+    --color-gold-muted: #B89A4F;    /* Warm Ochre Gold */
+    --color-gold-light: #F7EEDB;    /* Soft Champagne Gold Wash */
+    --color-ground: #FBF9F4;        /* Warm Cream Canvas */
+    --color-ground-soft: #F6F2E9;   /* Secondary Surface Wash */
+    --color-surface: #FFFFFF;       /* Clean Card Surface */
+    --color-border: #E8E4D8;        /* Subtle Warm Hairline */
+    --color-ink: #0C3934;           /* Primary Headings & High Contrast Text */
+    --color-muted: #5C6969;         /* Secondary / Muted Text */
+    --color-whatsapp: #25D366;      /* WhatsApp Conversion Green */
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-ground);
+    color: var(--color-ink);
+    overflow-x: hidden;
+  }
+
+  .font-arabic {
+    font-family: var(--font-arabic);
+  }
+
+  .font-serif-display {
+    font-family: var(--font-serif);
+  }
+}
