@@ -97,41 +97,41 @@ export const PostEditor: React.FC = () => {
         <div className="flex items-center gap-3">
           <Link
             to="/admin/blog"
-            className="p-2 rounded-xl bg-white border border-[#E4E4E7] text-[#52525B] hover:text-[#18181B]"
+            className="p-2 rounded-xl bg-white border border-[#E8E4D8] text-[#0C3934] hover:border-[#0C3934] transition-colors shadow-2xs"
           >
             <ArrowLeft className="w-4 h-4" />
           </Link>
-          <h1 className="text-2xl font-bold text-[#18181B]">
+          <h1 className="text-2xl sm:text-3xl font-bold font-serif-display text-[#0C3934]">
             {isEditing ? 'Edit Article' : 'Write New Article'}
           </h1>
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="bg-white p-6 sm:p-8 rounded-2xl border border-[#E4E4E7] space-y-6">
+      <form onSubmit={handleSubmit} className="bg-white p-6 sm:p-8 rounded-2xl border border-[#E8E4D8] space-y-6 shadow-xs">
         {/* Title */}
         <div>
-          <label className="block text-xs font-semibold text-[#52525B] mb-1">Article Headline *</label>
+          <label className="block text-xs font-semibold text-[#0C3934] mb-1">Article Headline *</label>
           <input
             type="text"
             name="title"
             value={formData.title}
             onChange={handleChange}
             placeholder="e.g. Why Every Muslim Seeker Needs a Personal Library"
-            className="w-full px-3.5 py-2.5 rounded-xl border border-[#E4E4E7] text-sm font-bold text-[#18181B] focus:outline-none"
+            className="w-full px-3.5 py-2.5 rounded-xl border border-[#E8E4D8] bg-[#FBF9F4]/40 text-sm font-bold text-[#0C3934] focus:outline-none focus:border-[#0C3934]"
             required
           />
         </div>
 
         {/* Excerpt */}
         <div>
-          <label className="block text-xs font-semibold text-[#52525B] mb-1">Short Excerpt / Teaser *</label>
+          <label className="block text-xs font-semibold text-[#0C3934] mb-1">Short Excerpt / Teaser *</label>
           <textarea
             name="excerpt"
             rows={2}
             value={formData.excerpt}
             onChange={handleChange}
             placeholder="Brief 1-2 sentence hook explaining the key value of this article..."
-            className="w-full px-3.5 py-2.5 rounded-xl border border-[#E4E4E7] text-xs text-[#18181B] focus:outline-none"
+            className="w-full px-3.5 py-2.5 rounded-xl border border-[#E8E4D8] bg-[#FBF9F4]/40 text-xs text-[#0C3934] focus:outline-none focus:border-[#0C3934]"
             required
           />
         </div>
@@ -230,18 +230,18 @@ export const PostEditor: React.FC = () => {
         </div>
 
         {/* Actions */}
-        <div className="pt-4 border-t border-[#E4E4E7] flex items-center justify-end gap-3">
+        <div className="pt-4 border-t border-[#E8E4D8] flex items-center justify-end gap-3">
           <Link
             to="/admin/blog"
-            className="px-4 py-2.5 rounded-xl border border-[#E4E4E7] text-xs font-semibold text-[#52525B] hover:bg-[#F4F4F5]"
+            className="px-5 py-2.5 rounded-xl border border-[#E8E4D8] text-xs font-semibold text-[#5C6969] hover:border-[#0C3934] transition-colors"
           >
             Cancel
           </Link>
           <button
             type="submit"
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#18181B] hover:bg-black text-white text-xs font-semibold transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#0C3934] hover:bg-[#0C5149] text-white text-xs font-semibold shadow-xs transition-colors"
           >
-            <Save className="w-4 h-4" />
+            <Save className="w-4 h-4 text-[#C59E42]" />
             <span>{isEditing ? 'Save Article' : 'Publish Article'}</span>
           </button>
         </div>

@@ -26,16 +26,42 @@ export const AdminLayout: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F4F4F5] flex flex-col md:flex-row">
+    <div className="min-h-screen bg-[#FBF9F4] flex flex-col md:flex-row relative overflow-hidden">
+      {/* Subtle BothLife Watermark on Main Canvas Background */}
+      <div 
+        className="fixed -right-16 -bottom-16 pointer-events-none opacity-[0.035] select-none z-0"
+        aria-hidden="true"
+      >
+        <img
+          src="/logo.svg"
+          alt=""
+          className="w-[500px] lg:w-[650px] h-auto object-contain"
+        />
+      </div>
+
       {/* Admin Sidebar */}
-      <aside className="w-full md:w-64 bg-[#18181B] text-white flex flex-col justify-between shrink-0 p-6 space-y-6">
-        <div className="space-y-6">
+      <aside className="w-full md:w-64 bg-[#0C3934] text-white flex flex-col justify-between shrink-0 p-6 space-y-6 border-r border-[#0C5149] relative z-10 overflow-hidden shadow-md">
+        {/* Subtle Watermark Inside Sidebar */}
+        <div 
+          className="absolute -right-8 -bottom-8 pointer-events-none opacity-[0.05] select-none mix-blend-screen"
+          aria-hidden="true"
+        >
+          <img
+            src="/logo.svg"
+            alt=""
+            className="w-48 h-auto object-contain filter invert"
+          />
+        </div>
+
+        <div className="space-y-6 relative z-10">
           {/* Brand */}
-          <div className="flex items-center gap-3 pb-6 border-b border-[#27272A]">
-            <img src="/logo.svg" alt="Admin Logo" className="w-10 h-10 object-contain invert" />
+          <div className="flex items-center gap-3 pb-6 border-b border-[#0C5149]">
+            <img src="/logo.svg" alt="Admin Logo" className="w-10 h-10 object-contain filter invert" />
             <div>
-              <span className="block font-bold text-sm leading-tight text-white">Admin Console</span>
-              <span className="block text-[11px] text-[#A1A1AA] truncate">{settings.store_name}</span>
+              <span className="block font-bold text-sm leading-tight text-white font-serif-display">{settings.store_name}</span>
+              <span className="block text-[10px] text-[#C59E42] font-semibold uppercase tracking-wider mt-0.5 truncate">
+                by BothLife Centre & Library
+              </span>
             </div>
           </div>
 
@@ -48,13 +74,13 @@ export const AdminLayout: React.FC = () => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold transition-colors ${
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold transition-all ${
                     active
-                      ? 'bg-white text-[#18181B]'
-                      : 'text-[#A1A1AA] hover:text-white hover:bg-[#27272A]'
+                      ? 'bg-[#0C5149] text-white border-l-2 border-[#C59E42] shadow-xs'
+                      : 'text-emerald-100/70 hover:text-white hover:bg-[#0C5149]/60'
                   }`}
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className={`w-4 h-4 ${active ? 'text-[#C59E42]' : 'text-emerald-300/80'}`} />
                   <span>{item.name}</span>
                 </Link>
               );
@@ -63,18 +89,18 @@ export const AdminLayout: React.FC = () => {
         </div>
 
         {/* Footer actions */}
-        <div className="pt-6 border-t border-[#27272A] space-y-2">
+        <div className="pt-6 border-t border-[#0C5149] space-y-2 relative z-10">
           <Link
             to="/"
             target="_blank"
-            className="flex items-center justify-between px-3 py-2 rounded-xl text-xs text-[#A1A1AA] hover:text-white hover:bg-[#27272A] transition-colors"
+            className="flex items-center justify-between px-3 py-2 rounded-xl text-xs text-emerald-200/80 hover:text-white hover:bg-[#0C5149]/60 transition-colors"
           >
             <span>View Public Store</span>
-            <ExternalLink className="w-3.5 h-3.5" />
+            <ExternalLink className="w-3.5 h-3.5 text-[#C59E42]" />
           </Link>
           <button
             onClick={handleLogout}
-            className="w-full flex items-center gap-2 px-3 py-2 rounded-xl text-xs text-red-400 hover:bg-red-950/30 transition-colors"
+            className="w-full flex items-center gap-2 px-3 py-2 rounded-xl text-xs text-red-300 hover:text-red-200 hover:bg-red-900/30 transition-colors"
           >
             <LogOut className="w-3.5 h-3.5" />
             <span>Sign Out</span>
@@ -83,7 +109,7 @@ export const AdminLayout: React.FC = () => {
       </aside>
 
       {/* Main Content View */}
-      <main className="flex-1 p-6 md:p-10 overflow-y-auto max-w-6xl">
+      <main className="flex-1 p-6 md:p-10 overflow-y-auto max-w-6xl relative z-10">
         <Outlet />
       </main>
     </div>
