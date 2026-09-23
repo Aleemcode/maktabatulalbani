@@ -14,14 +14,14 @@ import {
 import { Book, Category, BlogPost, StoreSettings } from '../types';
 import { initialBooks, initialCategories, initialBlogPosts, initialSettings } from '../data/initialData';
 
-// Firebase credentials loaded from Vite environment variables
+// Firebase credentials (supports Vite env or direct project config)
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || '',
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || '',
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || '',
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || '',
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || '',
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || ''
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "AIzaSyDtDniXuKDexEXaM2E5Z4pCTXtqr1hxbKc",
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "maktabahalbani-c85bc.firebaseapp.com",
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "maktabahalbani-c85bc",
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "maktabahalbani-c85bc.firebasestorage.app",
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "948342080127",
+  appId: import.meta.env.VITE_FIREBASE_APP_ID || "1:948342080127:web:93369815f92261dba9b54a"
 };
 
 export const isFirebaseConfigured = Boolean(
